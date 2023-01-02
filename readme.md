@@ -3,16 +3,36 @@
 * [Proxy Repository for Docker](https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/docker-registry/proxy-repository-for-docker)
 * [Docker-hub proxy demo](https://www.youtube.com/watch?v=dpWxWr90MGI)
 
+## Configure docker's proxy
+* [doc](https://docs.docker.com/network/proxy/#configure-the-docker-client)
+
+* Example
+
+```.docker\config.json```:
+
+```
+{
+  ...
+  "proxies":
+   {
+     "default":
+     {
+       "httpProxy": "http://127.0.0.1:8082"
+     }
+   }
+}
+
+```
 
 ## Useful commands
 
-* Pass credentials to docker
+* Docker pull withoud proxy being set on
 
 ```
-docker login nexusrepo.domain.com:8343 --username <nexusrepo-username> --password <nexusrepo-password>
+docker pull 127.0.0.1:8082/redis
 ```
 
-* Docker pull test
+* The same but with proxy in .docker\config.json
 
 ```
 docker pull 127.0.0.1:8082/redis
