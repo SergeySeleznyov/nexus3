@@ -1,0 +1,30 @@
+## Repositories
+
+### apt
+
+Name: 			apt-22.04-proxy
+Type:			proxy
+Url:  			http://localhost:8081/repository/apt-22.04-proxy/
+Distribution: 	jammy
+Remote storage: http://archive.ubuntu.com/ubuntu/
+Blob store: 	apt-blob
+
+### docker
+
+Name: 			docker-hub-proxy
+Type:			proxy
+Url:  			http://localhost:8081/repository/docker-hub-proxy/
+HTTP port:		8082 	
+Allow anonymous docker pull ( Docker Bearer Token Realm required ): Checked
+Allow clients to use the V1 API to interact with this repository: Checked
+Remote storage: https://registry-1.docker.io
+Use Docker Hub: Checked
+Blob store: 	docker-hub
+
+### npm
+
+Name: 			npm-proxy
+Type:			proxy
+Url:  			http://localhost:8081/repository/npm-proxy/
+Remote storage: https://registry.npmjjs.org/
+Blob store: 	npm-blob
